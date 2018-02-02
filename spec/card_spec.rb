@@ -1,6 +1,8 @@
 require 'card'
 require 'journey'
 
+# NOTHING WORKS, EVERYTHING SUCKS.
+
 describe Card do
   subject(:card) { described_class.new }
   let(:entry_station) { double :station }
