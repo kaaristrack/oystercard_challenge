@@ -19,7 +19,7 @@ describe Journey do
     it 'returns the minimum fare for a complete journey' do
       journey.entry_station = entry_station
       journey.exit_station = exit_station
-      expect(journey.fare).to eq Journey::MINIMUM_FARE
+      expect(journey.fare).to eq Journey::MIN_FARE
     end
 
     it 'returns a penalty fare for an incomplete journey' do

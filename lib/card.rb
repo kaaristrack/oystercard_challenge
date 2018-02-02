@@ -1,13 +1,13 @@
 require_relative 'journey'
 
 class Card
-  DEFAULT_BALANCE = 5
-  MIN_BALANCE = 1
+  DEFAULT = 5
+  MIN_BALANCE = 0
   MAX_BALANCE = 90
 
   attr_reader :balance, :journey_history, :current_journey
 
-  def initialize(balance = DEFAULT_BALANCE)
+  def initialize(balance = DEFAULT)
     @balance = balance
     @journey_history = []
     @current_journey = Journey.new
@@ -36,7 +36,7 @@ class Card
   end
 
   def empty?
-    balance < MIN_BALANCE
+    balance <= MIN_BALANCE
   end
 
   def complete_journey

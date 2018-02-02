@@ -1,5 +1,5 @@
 class Journey
-  MINIMUM_FARE = 3
+  MIN_FARE = 3
   PENALTY_FARE = 6
 
   attr_accessor :entry_station, :exit_station
@@ -10,8 +10,7 @@ class Journey
   end
 
   def fare
-    return MINIMUM_FARE if complete?
-    return PENALTY_FARE unless complete?
+    complete? ? MIN_FARE : PENALTY_FARE
   end
 
   def complete?
