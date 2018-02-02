@@ -1,9 +1,9 @@
 require_relative 'journey'
 
-class Oystercard
+class Card
   DEFAULT_BALANCE = 5
-  MINIMUM_BALANCE = 1
-  MAXIMUM_LIMIT = 90
+  MIN_BALANCE = 1
+  MAX_BALANCE = 90
 
   attr_reader :balance, :journey_history, :current_journey
 
@@ -14,14 +14,14 @@ class Oystercard
   end
 
   def top_up(amount)
-    raise "Maximum balance of #{MAXIMUM_LIMIT} exceeded!" if limit_reached?(amount)
+    raise "Maximum balance of #{MAX_BALANCE} exceeded!" if limit_reached?(amount)
     @balance += amount
   end
 
   def touch_in(entry_station)
     complete_journey if !current_journey.complete? || !current_journey.new?
     @current_journey.entry_station = entry_station
-    raise 'There is not enough credit on your card!' if balance < MINIMUM_BALANCE
+    raise 'There is not enough credit on your card!' if empty?
   end
 
   def touch_out(exit_station)
@@ -32,7 +32,11 @@ class Oystercard
   private
 
   def limit_reached?(amount)
-    (@balance + amount) > MAXIMUM_LIMIT
+    (@balance + amount) > MAX_BALANCE
+  end
+
+  def empty?
+    balance < MIN_BALANCE
   end
 
   def complete_journey
