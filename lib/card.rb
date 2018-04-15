@@ -1,4 +1,5 @@
-require_relative 'journey'
+require_relative 'journey.rb'
+require_relative 'journey_log.rb'
 
 class Card
   DEFAULT = 5
@@ -9,8 +10,8 @@ class Card
 
   def initialize(balance = DEFAULT)
     @balance = balance
-    @journey_history = []
     @current_journey = Journey.new
+    @journeylog = Journeylog.new(@current_journey) # creates a new instance of journeylog with an argument of c journey
   end
 
   def top_up(amount)
@@ -41,8 +42,8 @@ class Card
 
   def complete_journey
     deduct(@current_journey.fare)
-    @journey_history << @current_journey
-    @current_journey = Journey.new
+    # @journey_history << @current_journey
+    # @current_journey = Journey.new
   end
 
   def deduct(fare)

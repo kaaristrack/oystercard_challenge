@@ -20,4 +20,12 @@ class Journey
   def new?
     @entry_station.nil? && @exit_station.nil?
   end
+
+  def set_entry(entry_station)
+    @entry_station = entry_station
+  end
+
+  def set_exit(exit_station)
+    @exit_station = exit_station
+  end
 end
