@@ -75,10 +75,10 @@ __EXTRAS__
 
 ### Expansion
 
-In the future, I would like to expand this project to satisfy the following objectives:
+In the future, I would like to expand this project to satisfy the following additional objectives:
 
-- [ ] As a user, so I can see where I have travelled from, I want to be able to view my journey history.
+- As a user, so I can see where I have travelled from, I want to be able to view my journey history.
 
-- [ ] As a user, so I am not overcharged, I want to be able to find out the London "zone" of my desired destination.
+- As a user, so I am not overcharged, I want to be able to find out the London "zone" of my desired destination.
 
-- [ ] As a user, so I know to pay more attention next time, I want a penalty charge to be deducted if I fail to touch in/touch out correctly.
+- As a user, so I know to pay more attention next time, I want a penalty charge to be deducted if I fail to touch in/touch out correctly.
